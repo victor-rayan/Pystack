@@ -8,6 +8,23 @@
 
 {% block 'body' %}
 <div class = "container">
+    
+    {% if status == '1' %}
+    
+    <div class="alert alert-danger" role="alert">
+        Email ou Senha incorreta!
+    </div>
+
+    {% endif %}
+
+    {% if status == '2' %}
+    
+    <div class="alert alert-danger" role="alert">
+        Faça login antes de acessar a plataforma!
+    </div>
+
+    {% endif %}
+
     <div class ="row">
         <div class="col-md-3">
 
@@ -16,7 +33,7 @@
             <br>
             <h1 class="text-center"> Login</h1>
             <hr>
-            <form method="POST" action="#">
+            <form method="POST" action="{% url 'valida_login' %}"> {% csrf_token %}
                 <label>Digite seu Email:</label>
                 <input class="form-control" type="text" placeholder="Email..." name="email">
                 <br>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}
+
+    Home
+
+{% endblock %}
+
+{% block 'body' %}
+
+<h1>Cursos <span class="badge badge-secondary">New</span></h1>
+
+
+
+
+<div class="container">
+    <div class = "row-center">
+{% for i in cursos%}
+
+   <div class="col-md" style="margin-top: 20px;">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ i.thumb.url }}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">{{i.nome}}</h5>
+        <p class="card-text">{{i.descricao}}</p>
+        <a href="#" class="btn btn-primary">Acessar</a>
+        </div>
+    </div>
+</div> 
+</div>    
+</div>
+   
+{% endfor %} 
+
+{% endblock %}
